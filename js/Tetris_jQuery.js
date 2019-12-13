@@ -12,7 +12,6 @@ $(document).ready(function () {
         //     Tetrimos.y+=.1;
         // }
         if (e.which == 37) {
-            console.log(e.which == 37);
             Tetrimos.moveLeft();
             if (collision(board, Tetrimos)){
                 Tetrimos.moveRight();

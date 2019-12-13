@@ -17,12 +17,13 @@
     border-radius: 1.5em;
 }
 
-.col-6{
+.btn{
     text-align: center;
     font-family: sans-serif;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: 800;
     color: #fff;
+    /* padding: 0; */
 }
 
 .col{

@@ -154,16 +154,17 @@ function movement(time, delta) {
             Tetrimos.moveUp();
             updateBoard(board, Tetrimos);
             [Tetrimos, Tindex] = randomTetrimos();
+            score(board);
         }
 
         deltaT = 0;
     }
     deltaT += actionT
-    ctx.fillStyle = "#555";
+    ctx.fillStyle = "#888";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawBoard(board, Tetrimos)
     drawTetriminos(Tetrimos);
-    // score();
+    
     requestAnimationFrame(movement)
 }
 
@@ -190,10 +191,22 @@ function collision(board, Tetrimos) {
     return false;
 }
 
-// function score(){
-//      for (j = canvas.height / 20-1; j < -; --j) {
-//                 for (i = 0; i < canvas.width / 20; i++) {
-//                 board[j][i]=0;
-//             }
-// }
+function score(board){
+    // let control=0;
+    let check=[];
+     for (j = 0; j < canvas.height / 20; ++j) {
+         for (i = 0; i < canvas.width / 20; ++j)
+        //  debugger;
+         if ( board[j][i]!=0){
+             console.log("fuuuul")
+            //  control+=1;
+             check.push(j)
+         }            
+        }
+        for (j = check.length-1; j =0 ; --j) {
+            for (i=j;i=1;--i){
+                board[i]=board[i-1];
+            }
+        }
+}
 
