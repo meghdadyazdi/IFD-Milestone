@@ -1,0 +1,30 @@
+.index-body {
+    /* background-image: url("/images/4.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e1e1e1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+    /*background: url(background-photo.jpg) center center cover no-repeat fixed;*/
+    background-color: #0d5395;
+}
+
+#frame {
+    border: solid 1em black;
+    border-radius: 1.5em;
+}
+
+.col-6{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.col{
+    text-align: center;
+}

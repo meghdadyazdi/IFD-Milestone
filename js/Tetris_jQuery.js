@@ -18,6 +18,18 @@ $(document).ready(function () {
                 Tetrimos.moveRight();
             }
         }
+        else if ((e.keyCode == 38)) {
+            Tetrimos.rotateClockwise();
+            if (collision(board, Tetrimos)){
+                Tetrimos.rotateCounterClockwise();
+            }
+        }
+        else if ((e.keyCode == 17)) {
+            Tetrimos.rotateCounterClockwise();
+            if (collision(board, Tetrimos)){
+                Tetrimos.rotateCounter();
+            }
+        }
         else if (e.keyCode == 39) {
             Tetrimos.moveRight();
             if (collision(board, Tetrimos)){
@@ -30,5 +42,6 @@ $(document).ready(function () {
                 Tetrimos.moveUp();
             }
         }
+        
     });
 });
