@@ -154,7 +154,6 @@ function movement(time, delta) {
             Tetrimos.moveUp();
             updateBoard(board, Tetrimos);
             [Tetrimos, Tindex] = randomTetrimos();
-            score(board);
         }
 
         deltaT = 0;
@@ -176,6 +175,26 @@ function updateBoard(board, Tetrimos) {
             }
         });
     });
+
+    var check=[];
+     for (let j = 0; j < canvas.height / 20; ++j) {
+         if ( !board[j].some((element) => element == 0)){
+             console.log(j)
+            //  board[j].fill(0);
+             
+             board.unshift(board[j].fill(0))
+            
+             board.splice(j+1, 1);
+             
+             
+            //  check.push(j)
+         }            
+        }
+        // for (j = check.length-1; j =0 ; --j) {
+        //     for (i=j;i=1;--i){
+        //         board[i]=board[i-1];
+        //     }
+        // }
 } 
 
 function collision(board, Tetrimos) {
@@ -191,22 +210,22 @@ function collision(board, Tetrimos) {
     return false;
 }
 
-function score(board){
-    // let control=0;
-    let check=[];
-     for (j = 0; j < canvas.height / 20; ++j) {
-         for (i = 0; i < canvas.width / 20; ++j)
-        //  debugger;
-         if ( board[j][i]!=0){
-             console.log("fuuuul")
-            //  control+=1;
-             check.push(j)
-         }            
-        }
-        for (j = check.length-1; j =0 ; --j) {
-            for (i=j;i=1;--i){
-                board[i]=board[i-1];
-            }
-        }
-}
+// function score(board){
+//     // let control=0;
+//     let check=[];
+//      for (j = 0; j < canvas.height / 20; ++j) {
+//          for (i = 0; i < canvas.width / 20; ++j)
+//         //  debugger;
+//          if ( board[j][i]!=0){
+//              console.log("fuuuul")
+//             //  control+=1;
+//              check.push(j)
+//          }            
+//         }
+//         for (j = check.length-1; j =0 ; --j) {
+//             for (i=j;i=1;--i){
+//                 board[i]=board[i-1];
+//             }
+//         }
+// }
 
