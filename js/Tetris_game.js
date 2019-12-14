@@ -88,27 +88,20 @@ function randomTetrimos() {
     return [Tetrimos, Tindex];
 }
 
-// let Tetrimos = [];
-// let Tindex= 1;
+
 [Tetrimos, Tindex] = randomTetrimos();
-// drawTetriminos(L,"#f0a000")
-// drawTetriminos(Z,"#f00000")
-// drawTetriminos(S,"#00f000")
-// drawTetriminos(J,"#0000f0")
-// drawTetriminos(T,"#a000f0",Tetrimos)
-// drawTetriminos(I,"#00f0f0")
-// drawTetriminos(O,"#f0f000")
+
 
 let i;
 const board = [];
 for (j = 0; j < canvas.height / 20; j++) {
     board.push(new Array(canvas.width / 20).fill(0));
 }
-
-
+var gameStatus=false;
+var score=0;
+alert("press SPACE to start")
 movement()
-
-// ---------------------Functions and classes---------------------
+// ---------------------Functions---------------------
 
 // Draw each Tetriminos
 function drawTetriminos(Tetrimos) {
@@ -132,18 +125,21 @@ function drawBoard(board, Tetrimos) {
         });
     });
 }
-
-// let i=0;
 var deltaT = 0;
 function movement(time, delta) {
+    if (gameStatus){
     let actionT = time % 100;
     if (deltaT > 1000) {
         if (collision(board, Tetrimos)) {
             for (j = 0; j < canvas.height / 20; j++) {
                 for (i = 0; i < canvas.width / 20; i++) {
                 board[j][i]=0;
+                gameStatus=false;
+                score=0;
+                document.getElementById("score").innerText="Press SPACE to restars";
             }
         }
+        
             ctx.fillStyle = "#eee";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 drawBoard(board, Tetrimos)
@@ -153,18 +149,23 @@ function movement(time, delta) {
         if (collision(board, Tetrimos)) {
             Tetrimos.moveUp();
             updateBoard(board, Tetrimos);
+            scoring();
             [Tetrimos, Tindex] = randomTetrimos();
         }
 
         deltaT = 0;
     }
+    if (gameStatus){
+    
     deltaT += actionT
     ctx.fillStyle = "#888";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawBoard(board, Tetrimos)
     drawTetriminos(Tetrimos);
-    
+}
+}
     requestAnimationFrame(movement)
+    
 }
 
 function updateBoard(board, Tetrimos) {
@@ -175,26 +176,13 @@ function updateBoard(board, Tetrimos) {
             }
         });
     });
-
-    var check=[];
-     for (let j = 0; j < canvas.height / 20; ++j) {
-         if ( !board[j].some((element) => element == 0)){
-             console.log(j)
-            //  board[j].fill(0);
-             
-             board.unshift(board[j].fill(0))
-            
-             board.splice(j+1, 1);
-             
-             
-            //  check.push(j)
-         }            
-        }
-        // for (j = check.length-1; j =0 ; --j) {
-        //     for (i=j;i=1;--i){
-        //         board[i]=board[i-1];
-        //     }
-        // }
+    //  for (let j = 0; j < canvas.height / 20; ++j) {
+    //      if ( !board[j].some((element) => element == 0)){
+    //          console.log(j)             
+    //          board.unshift(board[j].fill(0))            
+    //          board.splice(j+1, 1);
+    //      }            
+    //     }
 } 
 
 function collision(board, Tetrimos) {
@@ -210,22 +198,18 @@ function collision(board, Tetrimos) {
     return false;
 }
 
-// function score(board){
-//     // let control=0;
-//     let check=[];
-//      for (j = 0; j < canvas.height / 20; ++j) {
-//          for (i = 0; i < canvas.width / 20; ++j)
-//         //  debugger;
-//          if ( board[j][i]!=0){
-//              console.log("fuuuul")
-//             //  control+=1;
-//              check.push(j)
-//          }            
-//         }
-//         for (j = check.length-1; j =0 ; --j) {
-//             for (i=j;i=1;--i){
-//                 board[i]=board[i-1];
-//             }
-//         }
-// }
+function scoring(){
+    let control=0;
+    
+    for (let j = 0; j < canvas.height / 20; ++j) {
+         if ( !board[j].some((element) => element == 0)){          
+            control+=1; 
+            board.unshift(board[j].fill(0))            
+            board.splice(j+1, 1);
+         }            
+        }
+        score=score+Math.pow(10,control);
+        console.log(score);
+        document.getElementById("score").innerText="Your Score: "+String(score);
+}
 

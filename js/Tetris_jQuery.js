@@ -41,6 +41,15 @@ $(document).ready(function () {
                 Tetrimos.moveUp();
             }
         }
+        else if ((e.keyCode == 32)) {
+            if (gameStatus){
+                gameStatus=false;
+            }else{
+                gameStatus=true;
+            }
+            
+        }
         
     });
+    // $("#score").text(String(score));
 });

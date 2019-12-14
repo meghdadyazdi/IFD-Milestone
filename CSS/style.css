@@ -9,14 +9,21 @@
     -o-background-size: cover;
     background-size: cover; */
     /*background: url(background-photo.jpg) center center cover no-repeat fixed;*/
-    background-color: #0d5000;/*#0d5395*/
+    background-color: #3d0000;/*#0d5395*/
 }
 
 #frame {
     border: solid 1em black;
     border-radius: 1.5em;
 }
-
+#score{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    /* padding: 0; */
+}
 .btn{
     text-align: center;
     font-family: sans-serif;
