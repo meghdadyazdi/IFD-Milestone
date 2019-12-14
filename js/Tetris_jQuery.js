@@ -1,16 +1,6 @@
 $(document).ready(function () {
     $("#btnSubmit").bind("click", function () { $('#' + '<%=btnUpload.ClientID %>').trigger("click"); return false; });
     $(document).keydown(function (e) {
-        // if (e.which == 37 && !collision(board, Tetrimos)) {
-        //     console.log(e.which == 37 && !collision(board, Tetrimos));
-        //     Tetrimos.moveLeft();
-        // }
-        // else if (e.keyCode == 39 && !collision(board, Tetrimos)) {
-        //     Tetrimos.moveRight();
-        // }
-        // else if ((Tetrimos.y>16)&&(e.keyCode == 40)) {
-        //     Tetrimos.y+=.1;
-        // }
         if (e.which == 37) {
             Tetrimos.moveLeft();
             if (collision(board, Tetrimos)){
@@ -52,4 +42,42 @@ $(document).ready(function () {
         
     });
     // $("#score").text(String(score));
+
+$("#leftbtn").click(function () {
+    Tetrimos.moveLeft();
+            if (collision(board, Tetrimos)){
+                Tetrimos.moveRight();
+            }
+    });
+
+    $("#rotatebtn").click(function () {
+        Tetrimos.rotateClockwise();
+            if (collision(board, Tetrimos)){
+                Tetrimos.rotateCounterClockwise();
+            }    
+    });
+
+    $("#rightbtn").click(function () {
+        Tetrimos.moveRight();
+            if (collision(board, Tetrimos)){
+                Tetrimos.moveLeft();
+            }    
+    });
+
+    $("#downbtn").click(function () {
+        Tetrimos.moveDown();
+            if (collision(board, Tetrimos)){
+                Tetrimos.moveUp();
+            }    
+    });
+
+    $("#inner-circle").click(function () {
+         if (gameStatus){
+                gameStatus=false;
+            }else{
+                gameStatus=true;
+            }
+    });
+
+
 });

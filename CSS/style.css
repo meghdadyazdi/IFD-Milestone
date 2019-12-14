@@ -15,6 +15,15 @@
 #frame {
     border: solid 1em black;
     border-radius: 1.5em;
+    
+
+    position: absolute;
+    top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -8%)
+
+
 }
 #score{
     text-align: center;
@@ -22,7 +31,11 @@
     font-size: 20px;
     font-weight: 800;
     color: #fff;
-    /* padding: 0; */
+    position: absolute;
+    top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -256%)
 }
 .btn{
     text-align: center;
@@ -32,7 +45,7 @@
     color: #fff;
     /* padding: 0; */
 }
-
+/* 
 .col{
     text-align: center;
-}
+} */

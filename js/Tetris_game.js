@@ -99,7 +99,7 @@ for (j = 0; j < canvas.height / 20; j++) {
 }
 var gameStatus=false;
 var score=0;
-alert("press SPACE to start")
+// alert("press SPACE to start")
 movement()
 // ---------------------Functions---------------------
 
@@ -136,7 +136,7 @@ function movement(time, delta) {
                 board[j][i]=0;
                 gameStatus=false;
                 score=0;
-                document.getElementById("score").innerText="Press SPACE to restars";
+                // document.getElementById("score").innerText="Press SPACE to restars";
             }
         }
         

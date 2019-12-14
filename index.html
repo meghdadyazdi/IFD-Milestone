@@ -17,12 +17,13 @@
 		type="text/css" />
 	<link rel="stylesheet" href="CSS/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="CSS/style.css" type="text/css" />
+	<link rel="stylesheet" href="CSS/style_copy.css" type="text/css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
 
- 
+
 
 	<title>Tetris Game | Home</title>
 </head>
@@ -35,40 +36,47 @@
 				<a class="navbar-brand" href="https://en.wikipedia.org/wiki/Tetris" target="_blank">About</a>
 			</div>
 		</div>
-	</nav>  
+	</nav>
 
-	<div class="container"> 
+	<div class="container">
 		<div class="row">
-			<div class="col">
-			</div> 
-			<div class="col">
-            <div id="score" class="col">0</div>
+			<div class="col-4"></div>
+			<div class="col-4">
+				<div id="score" class="col">0</div>
 				<canvas id="frame" width="240" height="380"></canvas>
-				<div class="row">
-					<div class="col"><button class="btn">1</button></div>
-				</div>
-				<div class="row">  
-					<div class="col"><button class="btn">reset</button></div>
-				</div>
-				<div class="row">
-					<div class="col-4"><button class="btn">3</button></div>
-					<div class="col-4"><button class="btn">2</button></div>
-					<div class="col-4"><button class="btn">3</button></div>
-				</div>
-			</div>
-			<div class="col"> 
-			</div>
-		</div>
-	</div>
- 
-	<!--Footer-->
-	<footer class="container-fluid m-0 p-0"></footer>
-	<!--/Footer-->
 
-	<script src="https://code.jquery.com/jquery-3.2.1.js"
-		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="js/Tetris_jQuery.js"></script>
-	<script src="js/Tetris_game.js"></script>
+
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4">
+						<div class="wrapper">
+							<div id="rightbtn" class="sector" style="transform: rotate(145deg) skew(20deg);">
+								<i class="fas fa-arrow-right"></i></div>
+							<div id="leftbtn" class="sector" style="transform: rotate(-35deg) skew(20deg);">
+								<i class="fas fa-arrow-left"></i></div>
+							<div id="rotatebtn" class="sector" style="transform: rotate(35deg) skew(-20deg);">
+								<i class="fas fa-redo-alt"></i></div>
+							<div id="downbtn" class="sector" style="transform: rotate(215deg) skew(-20deg);">
+								<i class="fas fa-arrow-down"></i></div>
+							<div id="inner-circle"><span>Start</span></div>
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</div>
+				<div class="col-4"></div>
+			</div>          
+		</div>
+
+
+
+		<!--Footer-->
+		<footer class="container-fluid m-0 p-0"></footer>
+		<!--/Footer-->
+
+		<script src="https://code.jquery.com/jquery-3.2.1.js"
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script src="js/Tetris_jQuery.js"></script>
+		<script src="js/Tetris_game.js"></script>
 </body>
 
 </html>
