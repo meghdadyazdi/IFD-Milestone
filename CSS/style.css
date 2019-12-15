@@ -1,5 +1,6 @@
 .index-body {
     background-color: #033e75;
+    overflow-y: hidden;
 }
 
 .mycontainer{
@@ -14,7 +15,7 @@
 #frame {
     border: solid .5em black;
     border-radius: .75em;
-    height: 50vh;
+    height: 21em;
     /* margin-top: 8em; */
     position: absolute;
     top: 44%;
@@ -30,7 +31,7 @@
     color: #fff;
     /* margin-top: 0em; */
     position: absolute;
-    top: 0%;
+    top: 5%;
     left: 50%;
     /* margin-right: 0%; */
     transform: translate(-50%, 0%);

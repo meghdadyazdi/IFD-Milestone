@@ -10,7 +10,24 @@
     left: 50%;
     margin-right: 0%;
     transform: translate(-50%, 0%);
+    
 }
+
+#over{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(255, 81, 0);
+    /* margin-top: 0em; */
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    /* margin-right: 0%; */
+    transform: translate(-50%, 0%);
+}
+
+
 .key_wrapper{
 	width: 23em;
     height: 9em;
@@ -18,7 +35,7 @@
     border: 8px solid #0000;
     /* border-radius: 50%; */
     position: absolute;
-    overflow: hidden;
+    overflow: visible;
     /* top: 50%; */
     left: 50%;
     margin-right: -50%;
@@ -28,23 +45,27 @@
 
 
 
-
-#inner-circle {
+#start {
   position: absolute;
     background: #bd0000;
     border-radius: 10px;
-    height: 40px;
-    width: 76px;
+    height: 6em;
+    width: 8em;
     margin: 0;
-    top: 50%;
+    top: -141%;
     left: 50%;
     margin-right: 0%;
+    
     transform: translate(-50%, -50%);
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;   
 }
 
 .arrow{
     background-color: #00cc00;
-    height: 1em;
+    height: 2em;
     width: 2em;
     border-radius: 10px;
     font-size: 30px;
@@ -52,6 +73,11 @@
     overflow: visible;
     margin-right: 0%;
     transform: translate(-50%, -50%);
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;   
+    
 }
 .arrow:hover{
     background-color: #008800;
@@ -101,26 +127,22 @@ span{
     .index-body {
         background-color: #033e75;
     }
-    /* .arrow {
-        height: 40px;
-        width: 75px;
-    } */
     #rightarrow {
-        top: 25%;
+        top: 10%;
     }
     
     #leftarrow {
-        top: 25%;
+        top: 10%;
     }
     #downarrow {
-        top: 75%;
-        left: 70%;
+        top: 80%;
+        left: 50%;
     }
-    #inner-circle {
-        top: 75%;
-        left: 30%;
-        height: 2em;
-        width: 5em;
+    #start {
+        top: -208%;
+        left: 50%;
+        height: 6em;
+        width: 8em;
     }
     .key_wrapper {
         top: 62%;
@@ -129,23 +151,44 @@ span{
     }
     #frame {
         top: 35%;
+        height: 20em;
     }
     #rotatearrow {
-    top: 25%;
+    top: 10%;
     }
 }
 @media only screen and (min-width: 768px) {
-    .index-body {
+        .index-body {
         background-color: #750303;
     }
     #frame {
-        top: 26%;
-        height: 45vh;
+        top: 20%;
+        margin-top: 75px;
     }
     .key_wrapper {
-        top: 45%;
+        top: 50%;
         width: 17em;
     }
+    #rightarrow {
+        top: 75%;
+    }
+    
+    #leftarrow {
+        top: 75%;
+    }
+    #downarrow {
+        top: 130%;
+        left: 50%;
+    }
+    #score {
+        top: 0%;
+    }
+    #over {
+        top: 3%;
+    }
+    #rotatearrow {
+    top: 75%;
+}
 }
 @media only screen and (min-width: 1024px ) {
     .index-body {
@@ -155,7 +198,7 @@ span{
         top: 50%;
     }
     #frame {
-    top: 28%;
-    height: 45vh;
-}
+    top: 20%;
+
+    }
 }

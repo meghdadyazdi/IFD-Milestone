@@ -6,7 +6,13 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 // console.log(canvas.width);
 // console.log(canvas.height);
 ctx.scale(20, 20)
-
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    var keyCode = evt.keyCode;
+    if (keyCode >= 37 && keyCode <= 40) {
+        return false;
+    }
+};
 // ---------------------tetriminos---------------------
 class Tetrimos1 {
     constructor(x, y, block, color) {
@@ -136,7 +142,12 @@ function movement(time, delta) {
                 board[j][i]=0;
                 gameStatus=false;
                 score=0;
-                // document.getElementById("score").innerText="Press SPACE to restars";
+                document.getElementById("start-wrapper").style.display = 'block';
+                document.getElementById("start-wrapper").style.display = 'block';
+                
+                document.getElementById("start").style.visibility = 'visible';
+                document.getElementById("over").innerText="GAME OVER";
+                document.getElementById("score").innerText="Your Score: "+String(score);
             }
         }
         
@@ -156,7 +167,8 @@ function movement(time, delta) {
         deltaT = 0;
     }
     if (gameStatus){
-    
+        document.getElementById("over").innerText=" ";
+    document.getElementById("score").innerText="Your Score: "+String(score);
     deltaT += actionT
     ctx.fillStyle = "#888";
     ctx.fillRect(0, 0, canvas.width, canvas.height);

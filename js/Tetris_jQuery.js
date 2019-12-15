@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#btnSubmit").bind("click", function () { $('#' + '<%=btnUpload.ClientID %>').trigger("click"); return false; });
     $(document).keydown(function (e) {
         if (e.which == 37) {
             Tetrimos.moveLeft();
@@ -33,8 +32,12 @@ $(document).ready(function () {
         }
         else if ((e.keyCode == 32)) {
             if (gameStatus) {
+                 $("#start_wrapper").show();
+                 $("#start-wrapper").show();
                 gameStatus = false;
             } else {
+                $("#start_wrapper").hide();
+                $("#start-wrapper").hide();
                 gameStatus = true;
             }
 
@@ -69,7 +72,10 @@ $(document).ready(function () {
         }
     });
 
-    $("#inner-circle").click(function () {
+    $("#start").click(function () {
+        $("#start_wrapper").hide();
+        $("#start-wrapper").hide();
+        
         if (gameStatus) {
             gameStatus = false;
         } else {
