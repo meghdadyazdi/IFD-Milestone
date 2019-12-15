@@ -38,26 +38,23 @@
 		</div>
 	</nav>
 
-	<div class="container">
-		<div class="row">
+	<!-- <div class="row">
 			<div class="col-4"></div>
 			<div class="col-4">
 				<div id="score" class="col">0</div>
-				<canvas id="frame" width="240" height="380"></canvas>
-
-
+				<canvas id="frame" width="240" height="380"></canvas> 
 				<div class="row">
 					<div class="col-4"></div>
-					<div class="col-4">
-						<div class="wrapper">
-							<div id="rightbtn" class="sector" style="transform: rotate(145deg) skew(20deg);">
-								<i class="fas fa-arrow-right"></i></div>
-							<div id="leftbtn" class="sector" style="transform: rotate(-35deg) skew(20deg);">
-								<i class="fas fa-arrow-left"></i></div>
-							<div id="rotatebtn" class="sector" style="transform: rotate(35deg) skew(-20deg);">
-								<i class="fas fa-redo-alt"></i></div>
-							<div id="downbtn" class="sector" style="transform: rotate(215deg) skew(-20deg);">
-								<i class="fas fa-arrow-down"></i></div>
+					<div id="keys" class="col-4"> 
+						 <div class="wrapper">  
+							<div id="rightbtn" class="sector">
+								<i id="rightarrow" class="fas fa-arrow-right"></i></div>
+							<div id="leftbtn" class="sector" >
+								<i id="leftarrow" class="fas fa-arrow-left"></i></div>
+							<div id="rotatebtn" class="sector">
+								<i id="rotatearrow" class="fas fa-redo-alt"></i></div>
+							<div id="downbtn" class="sector">
+								<i id="downarrow" class="fas fa-arrow-down"></i></div>
 							<div id="inner-circle"><span>Start</span></div>
 						</div>
 						<div class="col-4"></div>
@@ -65,18 +62,33 @@
 				</div>
 				<div class="col-4"></div>
 			</div>          
+		</div> -->
+
+	<div class="wrapper">
+		<div id="score" class="">0</div>
+		<canvas id="frame" width="240" height="380"></canvas>
+		<div class="key_wrapper">
+			<div id="rightarrow" class="arrow"><i class="fas fa-arrow-right"></i></div>
+			<div id="leftarrow" class="arrow"><i class="fas fa-arrow-left"></i></div>
+			<div id="rotatearrow" class="arrow"><i class="fas fa-redo-alt"></i></div>
+			<div id="downarrow" class="arrow"><i class="fas fa-arrow-down"></i></div>
+			<div id="inner-circle"><span>Start</span></div>
 		</div>
 
+	</div>   
+   
+
+  
 
 
-		<!--Footer-->
-		<footer class="container-fluid m-0 p-0"></footer>
-		<!--/Footer-->
+	<!--Footer-->
+	<footer class="container-fluid m-0 p-0"></footer>
+	<!--/Footer-->
 
-		<script src="https://code.jquery.com/jquery-3.2.1.js"
-			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		<script src="js/Tetris_jQuery.js"></script>
-		<script src="js/Tetris_game.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="js/Tetris_jQuery.js"></script>
+	<script src="js/Tetris_game.js"></script>
 </body>
 
 </html>

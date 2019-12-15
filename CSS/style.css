@@ -1,29 +1,26 @@
 .index-body {
-    /* background-image: url("/images/4.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #e1e1e1;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-    /*background: url(background-photo.jpg) center center cover no-repeat fixed;*/
-    background-color: #3d0000;/*#0d5395*/
+    background-color: #033e75;
 }
 
-#frame {
-    border: solid 1em black;
-    border-radius: 1.5em;
-    
-
+.mycontainer{
+    size: 90vh;
     position: absolute;
     top: 50%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -8%)
+        transform: translate(-50%, -50%)
+}
 
-
+#frame {
+    border: solid .5em black;
+    border-radius: .75em;
+    height: 50vh;
+    /* margin-top: 8em; */
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 #score{
     text-align: center;
@@ -31,11 +28,12 @@
     font-size: 20px;
     font-weight: 800;
     color: #fff;
+    /* margin-top: 0em; */
     position: absolute;
-    top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -256%)
+    top: 0%;
+    left: 50%;
+    /* margin-right: 0%; */
+    transform: translate(-50%, 0%);
 }
 .btn{
     text-align: center;
