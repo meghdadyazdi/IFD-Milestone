@@ -3,8 +3,6 @@ let canvas = document.getElementById("frame");
 let ctx = canvas.getContext("2d");
 ctx.fillStyle = "#555";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-// console.log(canvas.width);
-// console.log(canvas.height);
 ctx.scale(20, 20)
 document.onkeydown = function(evt) {
     evt = evt || window.event;
@@ -14,7 +12,7 @@ document.onkeydown = function(evt) {
     }
 };
 // ---------------------tetriminos---------------------
-class Tetrimos1 {
+class Tetris {
     constructor(x, y, block, color) {
         this.x = x;
         this.y = y;
@@ -33,10 +31,6 @@ class Tetrimos1 {
     moveLeft() {
         this.x--;
     }
-    // reset() {
-    //     this.x = 3;
-    //     this.y = -2;
-    // }
     rotateClockwise() {
         let n = this.block.length;
         for (let i = 0; i < n / 2; i++) {
@@ -90,13 +84,11 @@ function randomTetrimos() {
     ]
 
     let Tindex = Math.random() * Tetriminos.length | 0;
-    let Tetrimos = new Tetrimos1(3, 0, Tetriminos[Tindex], Tcolor[Tindex]);
+    let Tetrimos = new Tetris(3, 0, Tetriminos[Tindex], Tcolor[Tindex]);
     return [Tetrimos, Tindex];
 }
 
-
 [Tetrimos, Tindex] = randomTetrimos();
-
 
 let i;
 const board = [];
@@ -105,7 +97,7 @@ for (j = 0; j < canvas.height / 20; j++) {
 }
 var gameStatus=false;
 var score=0;
-// alert("press SPACE to start")
+
 movement()
 // ---------------------Functions---------------------
 
@@ -131,6 +123,7 @@ function drawBoard(board, Tetrimos) {
         });
     });
 }
+
 var deltaT = 0;
 function movement(time, delta) {
     if (gameStatus){
@@ -143,8 +136,7 @@ function movement(time, delta) {
                 gameStatus=false;
                 score=0;
                 document.getElementById("start-wrapper").style.display = 'block';
-                document.getElementById("start-wrapper").style.display = 'block';
-                
+                document.getElementById("start-wrapper").style.display = 'block';                
                 document.getElementById("start").style.visibility = 'visible';
                 document.getElementById("over").innerText="GAME OVER";
                 document.getElementById("score").innerText="Your Score: "+String(score);
@@ -188,13 +180,6 @@ function updateBoard(board, Tetrimos) {
             }
         });
     });
-    //  for (let j = 0; j < canvas.height / 20; ++j) {
-    //      if ( !board[j].some((element) => element == 0)){
-    //          console.log(j)             
-    //          board.unshift(board[j].fill(0))            
-    //          board.splice(j+1, 1);
-    //      }            
-    //     }
 } 
 
 function collision(board, Tetrimos) {
@@ -221,7 +206,6 @@ function scoring(){
          }            
         }
         score=score+Math.pow(10,control);
-        console.log(score);
         document.getElementById("score").innerText="Your Score: "+String(score);
 }
 
