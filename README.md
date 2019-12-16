@@ -41,9 +41,9 @@ This website contains first page site.
 ##### About 
       - Directed to the Tetris page in wikipedia 
 
-###### Main game board
+##### Main game board
 
-###### Left, right, down and rotate keys 
+##### Left, right, down and rotate keys 
       - Left and right keys to move the tiles to left and right 
       - Down key to accelerate the drop 
       - Rotate key to rotate the tiles clockwise
