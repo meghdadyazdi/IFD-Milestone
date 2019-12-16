@@ -84,7 +84,7 @@ function randomTetrimos() {
     ]
 
     let Tindex = Math.random() * Tetriminos.length | 0;
-    let Tetrimos = new Tetris(3, 0, Tetriminos[Tindex], Tcolor[Tindex]);
+    let Tetrimos = new Tetris(5, 0, Tetriminos[Tindex], Tcolor[Tindex]);
     return [Tetrimos, Tindex];
 }
 
@@ -134,12 +134,11 @@ function movement(time, delta) {
                 for (i = 0; i < canvas.width / 20; i++) {
                 board[j][i]=0;
                 gameStatus=false;
-                score=0;
                 document.getElementById("start-wrapper").style.display = 'block';
                 document.getElementById("start-wrapper").style.display = 'block';                
                 document.getElementById("start").style.visibility = 'visible';
                 document.getElementById("over").innerText="GAME OVER";
-                document.getElementById("score").innerText="Your Score: "+String(score);
+                score=0;
             }
         }
         
@@ -160,13 +159,13 @@ function movement(time, delta) {
     }
     if (gameStatus){
         document.getElementById("over").innerText=" ";
-    document.getElementById("score").innerText="Your Score: "+String(score);
-    deltaT += actionT
-    ctx.fillStyle = "#888";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    drawBoard(board, Tetrimos)
-    drawTetriminos(Tetrimos);
-}
+        document.getElementById("score").innerText="Your Score: "+String(score);
+        deltaT += actionT
+        ctx.fillStyle = "#888";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        drawBoard(board, Tetrimos)
+        drawTetriminos(Tetrimos);
+    }
 }
     requestAnimationFrame(movement)
     

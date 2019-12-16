@@ -6,21 +6,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		type="text/css" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
 		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
 		type="text/css" />
-	<link rel="stylesheet" href="CSS/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="CSS/style.css" type="text/css" />
-	<link rel="stylesheet" href="CSS/style_copy.css" type="text/css" />
+	<link rel="stylesheet" href="assets/CSS/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/CSS/style.css" type="text/css" />
 	<title>Tetris Game | Home</title>
 </head>
- 
+
 <body class="index-body">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -30,11 +31,11 @@
 			</div>
 		</div>
 	</nav>
-
-	<section>
+    
+	<section class="container-fluid board">
 		<div class="wrapper">
-			<div id="over" class="">0</div>
-			<div id="score" class="">0</div>
+			<div id="over" class=""></div>
+			<div id="score" class=""></div>
 			<canvas id="frame" width="240" height="380"></canvas>
 			<div id="keys" class="key_wrapper">
 				<div id="rightarrow" class="arrow"><i class="fas fa-arrow-right"></i></div>
@@ -43,22 +44,38 @@
 				<div id="downarrow" class="arrow"><i class="fas fa-arrow-down"></i></div>
 			</div>
 			<div id="start-wrapper" class="key_wrapper">
-				<div id="start"><span>Start</span></div>
+				<div id="start"><span id="mainstart">Start</span></div>
 			</div>
-
 		</div>
 	</section>
 
 
+	<section class="container-fluid instruction">
+		<h2>How to play</h2>
+		<p>Press <span id="start_text">Start</span> to drop one brick. Let it drop at the bottom of the gray board. Next
+			brick will drop automaticly. Let the bricks settle at the bottom of the gray board in
+			such a way that they fill a row completey. Use the green arrow to move bricks to left and right
+			(<i class="fas fa-arrow-left"></i>, <i class="fas fa-arrow-right"></i>), to acelerate droping
+			(<i class="fas fa-arrow-down"></i>) and to rotate them counter clockwise (<i class="fas fa-redo-alt"></i>).
+			If you complete multiple rows with one brick you will get many more points (10 for one row, 100 for two,
+			1000 for three, ...). Play and enjoy.</p>
+		<p><span id="caution"><i class="fas fa-exclamation-triangle"></i>CAUTION:</span> Do not try it at work. You
+			cannot stop playing</p>
+	</section>
 
-	<!--Footer-->
-	<footer class="container-fluid m-0 p-0"></footer>
-	<!--/Footer-->
+	<footer class="container-fluid">
+		<div class="copyright">
+			This application is Created by<a href="">Meghdad Y.</a>Find him:<a
+				href="https://www.linkedin.com/in/meghdad-y-895879190/"
+				target="_blank"><i class="fab fa-linkedin-in"></i></a>
+			<a href="https://github.com/meghdadyazdi" target="_blank"><i class="fab fa-github"></i></a>
+		</div>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js"
 		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="js/Tetris_jQuery.js"></script>
-	<script src="js/Tetris_game.js"></script>
+	<script src="assets/js/Tetris_jQuery.js"></script>
+	<script src="assets/js/Tetris_game.js"></script>
 </body>
 
 </html>

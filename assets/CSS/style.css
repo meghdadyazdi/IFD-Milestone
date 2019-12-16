@@ -1,17 +1,16 @@
-.index-body {
+.body{
+    overflow-y: visible;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.board{
     background-color: #033e75;
-    overflow-y: hidden;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;     
 }
-
-.mycontainer{
-    size: 90vh;
-    position: absolute;
-    top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%)
-}
-
 #frame {
     border: solid .5em black;
     border-radius: .75em;
@@ -48,11 +47,11 @@
     height: 45em;
     text-align: center;
     border: 8px solid #0000;
-    position: absolute;
+    position: relative;
     overflow: visible;
     top: 10%;
     left: 50%;
-    margin-right: 0%;
+    margin-right: 0;
     transform: translate(-50%, 0%);    
 }
 
@@ -63,7 +62,7 @@
     font-weight: 800;
     color: rgb(255, 81, 0);
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
 }
@@ -78,7 +77,7 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, 0%);
-    bottom: 0%;   
+    bottom: 0;   
 }
 
 #start {
@@ -95,7 +94,17 @@
     -webkit-user-select: none;  
     -moz-user-select: none;     
     -ms-user-select: none;      
-    user-select: none;   
+    user-select: none;      
+}
+
+#start_text {
+    background: #bd0000;
+    color: #fff;
+    font-family: sans-serif;
+    border-radius: 10px;
+    height: 3em;
+    width: 4em;
+    margin: 0;  
 }
 
 .arrow{
@@ -106,7 +115,7 @@
     font-size: 30px;
     position: absolute;
     overflow: visible;
-    margin-right: 0%;
+    margin-right: 0;
     transform: translate(-50%, -50%);
     -webkit-user-select: none;  
     -moz-user-select: none;     
@@ -119,7 +128,7 @@
 }
 
 #rightarrow{    
-    right: 0%;
+    right: 0;
     top: 50%;
     left: 85%;
 }
@@ -139,7 +148,7 @@
     left: 50%;
 }
 
-span{
+#mainstart{
     text-align: center;
     font-family: sans-serif;
     font-size: 20px;
@@ -162,11 +171,54 @@ span{
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
+/* -------------------------how to play---------- */
+.instruction{
+    font-family: 'Courier Prime', monospace;
+    background-color: #ffa96f;
+}
+h2{
+    font-family: 'Courier Prime', monospace;
+    background-color: #ffa96f;
+}
+
+/* -------------------------footer--------------- */
+footer{
+   font-family: 'Courier Prime', monospace;
+   background-color: #d801ff47;
+   padding: 1em 0 1em 0;
+}
+
+ul li{
+    font-size: 25px;
+}
+
+.copyright{
+    float: left;
+    font-weight: 500;
+}
+
+a{
+    padding: 0 1em 0 1em;
+    color: black;
+}
+
+a:hover, a:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.fa-github:before{
+    font-size: 1.2em;
+}
+
+.fa-linkedin-in:before{
+    font-size: 1.2em;
+}
 
 @media only screen and (max-width: 768px) {
-    .index-body {
+    /* .index-body {
         background-color: #033e75;
-    }
+    } */
 
     #rightarrow {
         top: 10%;
@@ -228,7 +280,7 @@ span{
     }
 
     #score {
-        top: 0%;
+        top: 0;
     }
 
     #over {
@@ -237,15 +289,5 @@ span{
 
     #rotatearrow {
     top: 75%;
-    }
-}
-
-@media only screen and (min-width: 1024px ) {
-    .key_wrapper {
-        top: 50%;
-    }
-
-    #frame {
-        top: 20%;
     }
 }
